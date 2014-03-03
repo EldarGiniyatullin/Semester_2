@@ -43,19 +43,6 @@ DoublyLinkedList::Element *DoublyLinkedList::createElement()
 
 void DoublyLinkedList::addElement(int number)
 {
-//    Element *newEl = new Element;
-//    newEl->next = NULL;
-//    newEl->previous = ending;
-//    if (!ending)
-//    {
-//        head = newEl;
-//        ending = newEl;
-//    }
-//    else
-//    {
-//        ending->next = newEl;
-//        ending = newEl;
-//    }
     Element *newEl = createElement();
     newEl->number = number;
 }
