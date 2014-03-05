@@ -1,7 +1,5 @@
 #pragma once
 
-//template <typename UniversalType>
-
 class List
 {
 public:
