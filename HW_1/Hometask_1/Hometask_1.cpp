@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    LinkedList *a = new LinkedList();
+    List *a = new DoublyLinkedList();
     a->addElement(1);
     a->printList();
     a->addElement(2);
@@ -26,7 +26,7 @@ int main()
     a->deleteElement(1);
     a->printList();
     delete a;
-    DoublyLinkedList *b = new DoublyLinkedList();
+    a = new LinkedList();
     a->addElement(1);
     a->printList();
     a->addElement(2);
@@ -45,6 +45,6 @@ int main()
     a->printList();
     a->deleteElement(1);
     a->printList();
-    delete b;
+    delete a;
 }
 

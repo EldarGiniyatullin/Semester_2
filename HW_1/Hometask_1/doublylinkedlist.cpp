@@ -10,6 +10,7 @@ DoublyLinkedList::DoublyLinkedList()
     numberOfElements = 0;
 }
 
+
 DoublyLinkedList::~DoublyLinkedList()
 {
     Element *tmp = head;
