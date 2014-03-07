@@ -5,11 +5,7 @@
 class LinkedList : public List
 {
 public:
-    LinkedList::LinkedList()
-    {
-        head = nullptr;
-        numberOfElements = 0;
-    }
+    LinkedList();
     ~LinkedList();
     void addElement(int number);
     void deleteElement(int number);
