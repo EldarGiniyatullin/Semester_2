@@ -1,5 +1,6 @@
 TEMPLATE = app
 CONFIG += console
+CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
@@ -8,13 +9,14 @@ QMAKE_CXXFLAGS += -std=c++0x
 SOURCES += \
     Hometask_2.cpp \
     linkedstack.cpp \
-    stackcalculator.cpp
+    stackcalculator.cpp \
+    arraystack.cpp
 
 HEADERS += \
     stack.h \
     linkedstack.h \
-    stackcalculator.h
-
+    stackcalculator.h \
+    arraystack.h
 
 OTHER_FILES += \
     temp.txt

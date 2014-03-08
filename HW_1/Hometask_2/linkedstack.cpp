@@ -5,7 +5,7 @@ using std::cout;
 
 LinkedStack::LinkedStack()
 {
-    head = NULL;
+    head = nullptr;
 }
 
 LinkedStack::~LinkedStack()
