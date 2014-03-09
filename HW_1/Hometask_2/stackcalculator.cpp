@@ -63,7 +63,7 @@ void StackCalculator::readOriginalExpression()
         isCorrect = false;
 }
 
-void StackCalculator::reversePolishNotation()
+void StackCalculator::reversePolishNotation()       // it's neccesary to write the function for "operators->head", I think. but later
 {
     if (isCorrect)
     {
