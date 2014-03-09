@@ -11,6 +11,7 @@ public:
     void push(char symbolToPush);
     void printStack();
     void pop();
+    bool isEmpty();
 protected:
     struct Element
     {
@@ -22,8 +23,10 @@ protected:
         }Data;
         Element *next;
     };
+public:
+    Element *head;
+protected:
     Element *popElement();
 private:
-    Element *head;
     Element *createElement();
 };

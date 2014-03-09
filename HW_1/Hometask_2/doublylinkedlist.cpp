@@ -1,12 +1,13 @@
 #include <iostream>
-#include "doublylinkedlist.h"
+#include "doublylinkedList.h"
 
+using std::cin;
 using std::cout;
 
 DoublyLinkedList::DoublyLinkedList()
 {
-    head = NULL;
-    ending = NULL;
+    head = nullptr;
+    ending = nullptr;
     numberOfElements = 0;
 }
 
@@ -26,7 +27,7 @@ DoublyLinkedList::~DoublyLinkedList()
 DoublyLinkedList::Element *DoublyLinkedList::createElement()
 {
     Element *newEl = new Element;
-    newEl->next = NULL;
+    newEl->next = nullptr;
     newEl->previous = ending;
     if (!ending)
     {
@@ -45,7 +46,15 @@ DoublyLinkedList::Element *DoublyLinkedList::createElement()
 void DoublyLinkedList::addElement(int number)
 {
     Element *newEl = createElement();
-    newEl->number = number;
+    newEl->Data.number = number;
+    newEl->isSymbol = false;
+}
+
+void DoublyLinkedList::addElement(char symbol)
+{
+    Element *newEl = createElement();
+    newEl->Data.symbol = symbol;
+    newEl->isSymbol = true;
 }
 
 void DoublyLinkedList::deleteElement(int number)
@@ -72,9 +81,19 @@ void DoublyLinkedList::printList()
 {
     cout << "\n";
     Element *tmp = head;
-    while (tmp)
+    if (!tmp)
+        cout << "There is nothing to print";
+    else
     {
-        cout << tmp->number;
-        tmp = tmp->next;
+        cout << "The list content:";
+        while (tmp)
+        {
+            cout << " ";
+            if (tmp->isSymbol)
+                cout << tmp->Data.symbol;
+            else
+                cout << tmp->Data.number;
+            tmp = tmp->next;
+        }
     }
 }

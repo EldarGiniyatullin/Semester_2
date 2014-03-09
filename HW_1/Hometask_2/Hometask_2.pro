@@ -10,13 +10,16 @@ SOURCES += \
     Hometask_2.cpp \
     linkedstack.cpp \
     stackcalculator.cpp \
-    arraystack.cpp
+    arraystack.cpp \
+    doublylinkedlist.cpp
 
 HEADERS += \
     stack.h \
     linkedstack.h \
     stackcalculator.h \
-    arraystack.h
+    arraystack.h \
+    doublylinkedlist.h \
+    list.h
 
 OTHER_FILES += \
     temp.txt

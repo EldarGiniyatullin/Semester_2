@@ -69,6 +69,11 @@ void LinkedStack::pop()
         cout << "The stack is empty";
 }
 
+bool LinkedStack::isEmpty()
+{
+    return (!head);
+}
+
 void LinkedStack::printStack()
 {
     cout << "\n";
@@ -80,7 +85,10 @@ void LinkedStack::printStack()
         cout << "The stack content:";
         while (tmp)
         {
-            cout << " " << tmp->Data.number;
+            if (tmp->isSymbol)
+                cout << " " << tmp->Data.symbol;
+            else
+                cout << " " << tmp->Data.number;
             tmp = tmp->next;
         }
     }
