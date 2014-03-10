@@ -39,4 +39,5 @@ int main()
     a->reversePolishNotation();
     a->calculateReversePolishNotation();
     a->printResult();
+    delete a;
 }
