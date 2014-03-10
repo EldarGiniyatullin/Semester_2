@@ -4,12 +4,6 @@
 
 using std::cout;
 
-LinkedList::LinkedList()
-{
-    head = nullptr;
-    numberOfElements = 0;
-}
-
 LinkedList::~LinkedList()
 {
     Element *tmp = head;
