@@ -7,7 +7,7 @@ class DoublyLinkedList : public List
 public:
     DoublyLinkedList();
     ~DoublyLinkedList();
-    void addElement(int number);
+    void addElement(double number);
     void addElement(char symbol);
     void deleteElement(int number);
     void printList();
@@ -17,7 +17,7 @@ protected:
         bool isSymbol;
         union
         {
-            int number;
+            double number;
             char symbol;
         }Data;
         Element *next;

@@ -36,7 +36,7 @@ int main()
 //    delete a;
     StackCalculator *a = new StackCalculator();
     a->readOriginalExpression();
-    a->originalExpression->printList();
     a->reversePolishNotation();
-    a->convertedExpression->printList();
+    a->calculateReversePolishNotation();
+    a->printResult();
 }

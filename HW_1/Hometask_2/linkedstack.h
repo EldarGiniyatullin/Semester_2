@@ -7,7 +7,7 @@ class LinkedStack : public Stack
 public:
     LinkedStack();
     ~LinkedStack();
-    void push(int numberToPush);
+    void push(double numberToPush);
     void push(char symbolToPush);
     void printStack();
     void pop();
@@ -18,7 +18,7 @@ protected:
         bool isSymbol;
         union
         {
-            int number;
+            double number;
             char symbol;
         }Data;
         Element *next;

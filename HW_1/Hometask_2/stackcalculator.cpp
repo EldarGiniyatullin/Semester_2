@@ -12,6 +12,7 @@ StackCalculator::StackCalculator()
     isOperatorLast = true;
     isExpressionConverted = false;
     isCorrect = true;
+    result = 0;
 }
 
 StackCalculator::~StackCalculator()
@@ -60,7 +61,7 @@ void StackCalculator::readOriginalExpression()
         cin.get(symbol);
     }
     if (isOperatorLast)
-        isCorrect = false;
+        incorrectExpression();
 }
 
 void StackCalculator::reversePolishNotation()       // it's neccesary to write the function for "operators->head", I think. but later
@@ -138,7 +139,45 @@ void StackCalculator::reversePolishNotation()       // it's neccesary to write t
 
 double StackCalculator::calculateReversePolishNotation()
 {
+    if (isCorrect)
+    {
+        double firstNumber, secondNumber = 0;
+        while (convertedExpression->head && isCorrect)
 
+        {
+            while (convertedExpression->head && !convertedExpression->head->isSymbol)
+            {
+                operators->push(convertedExpression->head->Data.number);
+                convertedExpression->deleteElement(1);
+            }
+            if (!convertedExpression->head && operators->head)
+            {
+                incorrectExpression();
+                break;
+            }
+            if (!correctnessCheck())
+                break;
+            secondNumber = operators->head->Data.number;
+            operators->pop();
+            if (!correctnessCheck())
+                break;
+            firstNumber = operators->head->Data.number;
+            operators->pop();
+            firstNumber = calculate(firstNumber, secondNumber, convertedExpression->head->Data.symbol);
+            operators->push(firstNumber);
+            convertedExpression->deleteElement(1);
+        }
+        if (isCorrect)
+        {
+            result = operators->head->Data.number;
+        }
+    }
+}
+
+void StackCalculator::printResult()
+{
+    if (isCorrect)
+        cout << result;
 }
 
 bool StackCalculator::isOtherSymbol(char symbol)
@@ -185,10 +224,45 @@ unsigned char StackCalculator::orderOfOperator(char symbolOfOperator)
     }
 }
 
+double StackCalculator::calculate(double firstNumber, double secondNumber, char operationSign)
+{
+    switch (operationSign)
+    {
+    case '+':
+        return firstNumber + secondNumber;
+        break;
+    case '-':
+        return firstNumber - secondNumber;
+        break;
+    case '*':
+        return firstNumber * secondNumber;
+        break;
+    case '/':
+        if (secondNumber != 0)
+            return firstNumber / secondNumber;
+        else
+            incorrectExpression();
+        break;
+    default:
+        break;
+    }
+}
+
 void StackCalculator::readingNumber()
 {
-    int tempNumber = 0;
+    double tempNumber = 0;
     cin >> tempNumber;
     originalExpression->addElement(tempNumber);
     isOperatorLast = false;
+}
+
+bool StackCalculator::correctnessCheck()
+{
+    if (!operators->head)
+    {
+        incorrectExpression();
+        return false;
+    }
+    else
+        return true;
 }

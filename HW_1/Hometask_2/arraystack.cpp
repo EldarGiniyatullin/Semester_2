@@ -25,36 +25,34 @@ bool ArrayStack::isStackFull()
     return (currentPositionOfBottom == lengthOfStack);
 }
 
-void ArrayStack::push(int numberToPush)
+void ArrayStack::push(double numberToPush)
 {
-    if (isStackFull())
-        cout << "\nThe stack is full";
-    else
-    {
+    if (!isStackFull()){
         array[currentPositionOfBottom].Data.number = numberToPush;
         array[currentPositionOfBottom].isSymbol = false;
         currentPositionOfBottom++;
     }
+    else
+        cout << "\nThe stack is full";
 }
 
 void ArrayStack::push(char symbolToPush)
 {
-    if (isStackFull())
-        cout << "\nThe stack is full";
-    else
-    {
+    if (!isStackFull()){
         array[currentPositionOfBottom].Data.symbol = symbolToPush;
         array[currentPositionOfBottom].isSymbol = true;
         currentPositionOfBottom++;
     }
+    else
+        cout << "\nThe stack is full";
 }
 
 void ArrayStack::pop()
 {
-    if (currentPositionOfBottom == 0)
-        cout << "\nThe stack is empty";
-    else
+    if (currentPositionOfBottom != 0)
         currentPositionOfBottom--;
+    else
+        cout << "\nThe stack is empty";
 }
 
 void ArrayStack::printStack()

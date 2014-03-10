@@ -27,12 +27,12 @@ LinkedStack::Element *LinkedStack::createElement()
     return newEl;
 }
 
-void LinkedStack::push(int numberToPush)
+void LinkedStack::push(double numberToPush)
 {
     Element *newEl = createElement();
     newEl->Data.number = numberToPush;
     newEl->isSymbol = false;
-    cout << "\n" << numberToPush << " added";
+//    cout << "\n" << numberToPush << " added";
 }
 
 void LinkedStack::push(char symbolToPush)
@@ -40,7 +40,7 @@ void LinkedStack::push(char symbolToPush)
     Element *newEl = createElement();
     newEl->Data.symbol = symbolToPush;
     newEl->isSymbol = true;
-    cout << "\n" << symbolToPush << " added";
+//    cout << "\n" << symbolToPush << " added";
 }
 
 LinkedStack::Element *LinkedStack::popElement()
@@ -49,11 +49,11 @@ LinkedStack::Element *LinkedStack::popElement()
     {
         Element *elementToReturn = head;
         head = head->next;
-        cout << "\n" << (elementToReturn->isSymbol ? elementToReturn->Data.symbol : elementToReturn->Data.number) << " has been taken";
+//        cout << "\n" << (elementToReturn->isSymbol ? elementToReturn->Data.symbol : elementToReturn->Data.number) << " has been taken";
         return elementToReturn;
     }
-    else
-        cout << "The stack is empty";
+//    else
+//        cout << "The stack is empty";
 }
 
 void LinkedStack::pop()
@@ -62,11 +62,11 @@ void LinkedStack::pop()
     {
         Element *tmp = head;
         head = head->next;
-        cout << "\n" << (tmp->isSymbol ? tmp->Data.symbol : tmp->Data.number) << " has been deleted";
+//        cout << "\n" << (tmp->isSymbol ? tmp->Data.symbol : tmp->Data.number) << " has been deleted";
         delete tmp;
     }
-    else
-        cout << "The stack is empty";
+//    else
+//        cout << "The stack is empty";
 }
 
 bool LinkedStack::isEmpty()

@@ -43,7 +43,7 @@ DoublyLinkedList::Element *DoublyLinkedList::createElement()
     return newEl;
 }
 
-void DoublyLinkedList::addElement(int number)
+void DoublyLinkedList::addElement(double number)
 {
     Element *newEl = createElement();
     newEl->Data.number = number;
@@ -59,10 +59,7 @@ void DoublyLinkedList::addElement(char symbol)
 
 void DoublyLinkedList::deleteElement(int number)
 {
-    if (numberOfElements < number)
-        cout << "\nNumber of elements in list is less than the number";
-    else
-    {
+    if (numberOfElements >= number){
         Element **tmp = &head;
         for (int i = 1; i < number; i++)
             tmp = &((*tmp)->next);
@@ -75,15 +72,15 @@ void DoublyLinkedList::deleteElement(int number)
         delete elementToDelete;
         numberOfElements--;
     }
+//    else
+//        cout << "\nNumber of elements in list is less than the number";
 }
 
 void DoublyLinkedList::printList()
 {
     cout << "\n";
     Element *tmp = head;
-    if (!tmp)
-        cout << "There is nothing to print";
-    else
+    if (tmp)
     {
         cout << "The list content:";
         while (tmp)
@@ -96,4 +93,6 @@ void DoublyLinkedList::printList()
             tmp = tmp->next;
         }
     }
+    else
+    cout << "There is nothing to print";
 }

@@ -8,7 +8,7 @@ public:
     ArrayStack();
     ArrayStack(unsigned int length);
     ~ArrayStack();
-    void push(int numberToPush);
+    void push(double numberToPush);
     void push(char symbolToPush);
     void pop();
     void printStack();
@@ -18,7 +18,7 @@ protected:
         bool isSymbol;
         union
         {
-            int number;
+            double number;
             char symbol;
         }Data;
     };

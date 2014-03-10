@@ -20,6 +20,8 @@ public:
     double calculateReversePolishNotation();
     DoublyLinkedList *originalExpression;
     DoublyLinkedList *convertedExpression;
+    double result;
+    void printResult();
 protected:
     bool isOperatorLast; // '(' too
     bool isExpressionConverted; // to reverse polish notation
@@ -31,6 +33,8 @@ protected:
     void incorrectExpression();
     bool isCorrect;
     unsigned char orderOfOperator(char symbolOfOperator);
+    double calculate(double firstNumber, double secondNumber, char operationSign);
 private:
     void readingNumber();
+    bool correctnessCheck();
 };
