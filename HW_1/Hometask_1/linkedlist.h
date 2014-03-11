@@ -5,7 +5,7 @@
 class LinkedList : public List
 {
 public:
-    LinkedList::LinkedList() : head(nullptr), numberOfElements(0)
+    LinkedList() : List(), head(nullptr)
     {
     }
     ~LinkedList();

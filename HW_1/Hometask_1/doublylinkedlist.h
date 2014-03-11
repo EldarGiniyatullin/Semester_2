@@ -5,7 +5,10 @@
 class DoublyLinkedList : public List
 {
 public:
-    DoublyLinkedList();
+    DoublyLinkedList() : List(), head(nullptr), ending(nullptr)
+    {
+
+    }
     ~DoublyLinkedList();
     void addElement(int number);
     void deleteElement(int number);

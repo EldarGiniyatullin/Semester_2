@@ -5,6 +5,10 @@
 class List
 {
 public:
+    List() : numberOfElements(0)
+    {
+
+    }
     virtual ~List()
     {
 

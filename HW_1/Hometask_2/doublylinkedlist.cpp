@@ -4,14 +4,6 @@
 using std::cin;
 using std::cout;
 
-DoublyLinkedList::DoublyLinkedList()
-{
-    head = nullptr;
-    ending = nullptr;
-    numberOfElements = 0;
-}
-
-
 DoublyLinkedList::~DoublyLinkedList()
 {
     Element *tmp = head;

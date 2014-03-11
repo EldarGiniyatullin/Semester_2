@@ -5,7 +5,10 @@
 class LinkedStack : public Stack
 {
 public:
-    LinkedStack();
+    LinkedStack() : head(nullptr)
+    {
+
+    }
     ~LinkedStack();
     void push(double numberToPush);
     void push(char symbolToPush);

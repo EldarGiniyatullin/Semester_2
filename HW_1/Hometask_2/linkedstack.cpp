@@ -3,11 +3,6 @@
 
 using std::cout;
 
-LinkedStack::LinkedStack()
-{
-    head = nullptr;
-}
-
 LinkedStack::~LinkedStack()
 {
     Element *tmp = head;
