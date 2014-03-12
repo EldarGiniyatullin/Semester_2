@@ -3,14 +3,6 @@
 
 using std::cout;
 
-DoublyLinkedList::DoublyLinkedList()
-{
-    head = NULL;
-    ending = NULL;
-    numberOfElements = 0;
-}
-
-
 DoublyLinkedList::~DoublyLinkedList()
 {
     Element *tmp = head;
