@@ -5,9 +5,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    Hometask_1.cpp \
-    arrayheapsorter.cpp \
-    arrayquicksorter.cpp
+    Hometask_1.cpp
 
 HEADERS += \
     arraysorter.h \

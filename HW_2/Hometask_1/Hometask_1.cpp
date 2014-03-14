@@ -1,5 +1,7 @@
 #include <iostream>
 #include "arrayheapsorter.h"
+#include "arrayquicksorter.h"
+
 
 using namespace std;
 
@@ -26,12 +28,17 @@ int main()
     b[2] = 7.843;
     b[3] = 2.333;
     b[4] = -3;
-    ArrayHeapSorter<int> *c = new ArrayHeapSorter<int>;
-    c->sortArray(a, 5);  //why "undefined reference to `ArrayHeapSorter<int>::sortArray(int*, unsigned int)'" ?
     printArray(a);
+    printArray(b);
+    ArrayHeapSorter<int> *c = new ArrayHeapSorter<int>;
+    c->sortArray(a, 5);
+    printArray(a);
+    ArrayQuickSorter<double> *d = new ArrayQuickSorter<double>;
+    d->sortArray(b, 5);
     printArray(b);
     delete a;
     delete b;
     delete c;
+    delete d;
 }
 
