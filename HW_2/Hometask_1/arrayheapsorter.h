@@ -21,18 +21,21 @@ public:
     }
     void sortArray(T *array, unsigned int arraySize)
     {
-        for (int i = (arraySize + 1) / 2 - 1; i >= 0; i--)
+        for (int i = arraySize / 2 /*- 1 + (arraySize % 2 == 0 ? 1 : 0)*/; i >= 1; i--)
         {
-            if (array[i] < array[2 * i])
-                swap(array[i], array[2 * i]);
-            if (array[i] < array[(2 * i) + 1])
-                swap(array[i], array[(2 * i) + 1]);
-            if (array[2 * i] > array[(2 * i) + 1])
-                swap(array[2 * i], array[(2 * i) + 1]);
+            if (array[i - 1] < array[2 * i - 1])
+                swap(array[i - 1], array[2 * i - 1]);
+            if (arraySize > 2 * i)
+            {
+                if (array[i - 1] < array[2 * i])
+                    swap(array[i - 1], array[2 * i]);
+                if (array[2 * i] > array[2 * i - 1])
+                    swap(array[2 * i], array[2 * i - 1]);
+            }
         }
         if (arraySize > 1)
         {
-            swap(array[1], array[arraySize]);
+            swap(array[0], array[arraySize - 1]);
             sortArray(array, arraySize - 1);
         }
     }

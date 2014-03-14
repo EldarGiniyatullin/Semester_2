@@ -36,8 +36,8 @@ int main()
     ArrayQuickSorter<double> *d = new ArrayQuickSorter<double>;
     d->sortArray(b, 5);
     printArray(b);
-    delete a;
-    delete b;
+    delete[] a;
+    delete[] b;
     delete c;
     delete d;
 }
