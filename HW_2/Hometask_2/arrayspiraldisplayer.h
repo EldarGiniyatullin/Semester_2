@@ -3,5 +3,12 @@
 class ArraySpiralDisplayer
 {
 public:
-    virtual void displaySpiral(int **array, unsigned int arraySize) = 0;
+    void displaySpiral(int **array, unsigned int arraySize);
+    virtual void printElement(int number) = 0;
+    ArraySpiralDisplayer()
+    {
+    }
+    virtual ~ArraySpiralDisplayer()
+    {
+    }
 };
